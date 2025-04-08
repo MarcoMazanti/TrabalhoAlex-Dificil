@@ -1,0 +1,3 @@
+C:/Users/marco/CLionProjects/TrabalhoAlexDificil/cmake-build-debug/CMakeFiles/TrabalhoAlexDificil.dir
+C:/Users/marco/CLionProjects/TrabalhoAlexDificil/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/marco/CLionProjects/TrabalhoAlexDificil/cmake-build-debug/CMakeFiles/rebuild_cache.dir
