@@ -3,13 +3,13 @@
 #include <time.h>
 #include <math.h>
 
+// Definições de constantes
 #define NUM_CENTROIDES 4
 #define NUM_PONTOS 150
 
+// Prototipação de funções
 double gerar_random();
-
 void calcular_centroide(double[][3], double[][2]);
-
 int centroide_mais_proximo(double, double, double[][2]);
 
 int main(void) {
@@ -79,7 +79,7 @@ int main(void) {
         }
         fclose(arqPontos);
 
-        // Gráfico
+        // Prepara o comando para gerar o gráfico com o gnuplot
         snprintf(resultadoDiretorio, sizeof(resultadoDiretorio),
                  ultima ? "agrupamento_final" : "interecao_%d", i + 1);
         snprintf(resultadoNome, sizeof(resultadoNome),
@@ -106,10 +106,12 @@ int main(void) {
     return 0;
 }
 
+// Gera um número aleatório entre 0 e 100
 double gerar_random() {
     return ((double)rand() / RAND_MAX) * 100.0;
 }
 
+// Calcula as novas posições dos centroides com base na média dos pontos atribuídos
 void calcular_centroide(double pontos[NUM_PONTOS][3], double centroides[NUM_CENTROIDES][2]) {
     for (int h = 0; h < NUM_CENTROIDES; h++) {
         double somaX = 0, somaY = 0;
@@ -131,6 +133,7 @@ void calcular_centroide(double pontos[NUM_PONTOS][3], double centroides[NUM_CENT
     }
 }
 
+// Retorna o índice do centroide mais próximo para um ponto (x, y)
 int centroide_mais_proximo(double x, double y, double centroides[NUM_CENTROIDES][2]) {
     double menor_dist = 1e9;
     int indice = -1;
